@@ -2,11 +2,22 @@ print('########################################')
 print('Bem vindo ao jogo de adivinhação!')
 print('########################################')
 
-numbSecret = 49
+def advinha():
+    numbSecret = 49
 
-numbUser = input('Digite um número: ')
+    numbUser = int(input('Digite um número: '))
 
-if numbSecret == int(numbUser):
-    print('Você acertou!')
-else:
-    print('Você errou!')
+    acertou = numbSecret == numbUser
+
+    if acertou:
+        print('Você acertou!')
+        return 'true'
+    else:
+        if numbUser < numbSecret:
+            print('Você errou ! o número é menor')
+        else:
+            print('Você errou ! o número é maior')
+        return 'false'
+
+while advinha() == 'false':
+    advinha()
