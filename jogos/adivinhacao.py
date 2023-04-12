@@ -1,23 +1,25 @@
+import random
+
 print('########################################')
 print('Bem vindo ao jogo de adivinhação!')
 print('########################################')
 
-def advinha():
-    numbSecret = 49
+def advinha(de, ate):
+    numbSecret = random.randint(de,ate)
 
-    numbUser = int(input('Digite um número: '))
+    numeroUsuario = float(input('Digite um número: '))
 
-    acertou = numbSecret == numbUser
+    acertou = numbSecret == numeroUsuario
 
     if acertou:
         print('Você acertou!')
         return 'true'
     else:
-        if numbUser < numbSecret:
+        if numeroUsuario > numbSecret:
             print('Você errou ! o número é menor')
         else:
             print('Você errou ! o número é maior')
         return 'false'
 
-while advinha() == 'false':
-    advinha()
+while advinha(1,10) == 'false':
+    advinha(1,10)
