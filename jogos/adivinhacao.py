@@ -4,22 +4,33 @@ print('########################################')
 print('Bem vindo ao jogo de adivinhação!')
 print('########################################')
 
-def advinha(de, ate):
-    numbSecret = random.randint(de,ate)
+tentativa = 3
+numbSecret = random.randint(1,10)
 
-    numeroUsuario = float(input('Digite um número: '))
+while tentativa > 0:
+
+    print('Você tem {} de três tentativas!'.format(tentativa))
+
+    tentativa = (tentativa - 1)
+
+    numeroUsuario = input('Digite um número: ')
+
+    if not numeroUsuario.isdigit():
+        print('só aceitamos números')
+        break
+
+    numeroUsuario = int(numeroUsuario)
 
     acertou = numbSecret == numeroUsuario
 
+    if tentativa == 0 and not acertou:
+        print('O número correto era {} Você errou!'.format(numbSecret))
+        break
     if acertou:
         print('Você acertou!')
-        return 'true'
+        break
     else:
         if numeroUsuario > numbSecret:
             print('Você errou ! o número é menor')
         else:
             print('Você errou ! o número é maior')
-        return 'false'
-
-while advinha(1,10) == 'false':
-    advinha(1,10)
