@@ -11,7 +11,7 @@ while tentativa > 0:
 
     print('Você tem {} de três tentativas!'.format(tentativa))
 
-    tentativa = (tentativa - 1)
+    tentativa -= 1
 
     numeroUsuario = input('Digite um número: ')
 
