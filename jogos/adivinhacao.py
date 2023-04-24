@@ -21,7 +21,7 @@ match nivel:
     case 2:
         tentativa = tentativa
 
-numbSecret = random.randint(1,10)
+numbSecret = random.randint(1, 10)
 
 while tentativa > 0:
 
@@ -29,7 +29,7 @@ while tentativa > 0:
 
     numeroUsuario = input('Digite um número: ')
 
-    #Validações
+    # Validações
 
     if not numeroUsuario.isdigit():
         print('só aceitamos números')
@@ -43,7 +43,7 @@ while tentativa > 0:
 
     tentativa -= 1
 
-    #pontuação e resultado
+    # pontuação e resultado
 
     acertou = numbSecret == numeroUsuario
 
